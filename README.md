@@ -18,3 +18,4 @@ In order to use this tool, you need to:
 ## Notice
 - Do not include `<Windows.h>` in any file, it causes conflict with SFML.
 - If you don't want to/can not use Visual Studio for this, you can still clone this repo, copy the files and figure it out yourself.
+- Report issue [here](https://github.com/desk2000/SnakeSimulator/issues) or contact us.
