@@ -12,7 +12,7 @@ In order to use this tool, you need to:
 2. Put your own `Snake.h` and `Snake.cpp` in `\SnakeSimulator\ConsoleApplication1\ConsoleApplication1` folder.
 3. Open `\SnakeSimulator\ConsoleApplication1\SnakeSimulator` with Visual Studio.
 4. If the path to the SFML file on your computor is not `C:\Program Files\SFML-2.5.1` (which means you didn't follow 3. in preperation), you'll need to modify the path of `SFML-2.5.1\include` and `SFML-2.5.1\lib`. Follow [this instruction video](https://www.youtube.com/watch?v=YfMQyOw1zik&t=201s) until 1:23. 
-5. Right click on `SnakeSimulator` in Solution Explorer, click `Add -> Existing Item`, and add `Snake.h` and `Snake.cpp`, which you just put in \SnakeSimulator\ConsoleApplication1\ConsoleApplication1` folder.
+5. Right click on `SnakeSimulator` in Solution Explorer, click `Add -> Existing Item`, and add `Snake.h` and `Snake.cpp`, which you just put in the `\SnakeSimulator\ConsoleApplication1\ConsoleApplication1` folder.
 6. Click Local Windows Debugger. It should work.
 
 ## Notice
