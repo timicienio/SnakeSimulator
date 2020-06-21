@@ -38,26 +38,26 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EndMenu.h">
-      <Filter>來源檔案</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>來源檔案</Filter>
-    </ClInclude>
-    <ClInclude Include="GameState.h">
-      <Filter>來源檔案</Filter>
-    </ClInclude>
-    <ClInclude Include="SfSnake.h">
-      <Filter>來源檔案</Filter>
+    <ClInclude Include="Terrain.h">
+      <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
-      <Filter>來源檔案</Filter>
-    </ClInclude>
-    <ClInclude Include="Terrain.h">
-      <Filter>來源檔案</Filter>
+      <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="Snake.h">
-      <Filter>來源檔案</Filter>
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="SfSnake.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="EndMenu.h">
+      <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

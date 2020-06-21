@@ -33,7 +33,6 @@ void GameState::update()
 		if (checkInvalidStep() || checkHitWall() || checkHitSelf() || checkEatLonger())
 		{
 			gameOver = true;
-			render();
 			return;
 		}
 		if (map[get<0>(sfsnake->new_pos.back())] [get<1>(sfsnake->new_pos.back())]> 0)
@@ -45,7 +44,6 @@ void GameState::update()
 			scoreText.setString("Score:" + to_string(score));
 		}
 	}
-	render();
 }
 
 void GameState::updateMapBody()

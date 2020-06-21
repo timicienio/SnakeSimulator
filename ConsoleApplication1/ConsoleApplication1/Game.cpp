@@ -54,8 +54,13 @@ void Game::run()
 {
 	while (window->isOpen())
 	{
-		dt = clock.getElapsedTime().asSeconds();
-		update();
-		render();
+		dt += clock.restart().asSeconds();
+		float TARGET_FRAMERATE = 20.f;
+		if (dt >= 1 / TARGET_FRAMERATE)
+		{
+			update();
+			render();
+			dt = 0.f;
+		}
 	}
 }

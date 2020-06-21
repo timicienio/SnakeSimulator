@@ -30,9 +30,9 @@ SfSnake::SfSnake(std::queue<std::tuple<int, int>> startingPos)
 	new_pos = toVector(startingPos);
 	for (int i = 0; !startingPos.empty(); i++)
 	{
-		body.emplace_back(sf::Vector2f(UNIT_SIZE - 2, UNIT_SIZE - 2));
-		body.back().setFillColor(sf::Color::Green);
-		body.back().setPosition(std::get<0>(startingPos.front()) * UNIT_SIZE + 1, std::get<1>(startingPos.front()) * UNIT_SIZE + 1);
+		body.emplace(body.begin(), sf::Vector2f(UNIT_SIZE - 2, UNIT_SIZE - 2));
+		body.front().setFillColor(sf::Color::Green);
+		body.front().setPosition(std::get<0>(startingPos.front()) * UNIT_SIZE + 1, std::get<1>(startingPos.front()) * UNIT_SIZE + 1);
 		startingPos.pop();
 	}
 }

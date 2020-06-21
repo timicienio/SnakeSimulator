@@ -1,1 +1,15 @@
-﻿  ConsoleApplication1.vcxproj -> D:\documents\cons\ConsoleApplication1\Debug\ConsoleApplication1.exe
+﻿  EndMenu.cpp
+D:\GitHub Files\SnakeSimulator\ConsoleApplication1\ConsoleApplication1\SfSnake.h(2,9): fatal error C1083: 無法開啟包含檔案: 'Snake.h': No such file or directory
+  Game.cpp
+D:\GitHub Files\SnakeSimulator\ConsoleApplication1\ConsoleApplication1\SfSnake.h(2,9): fatal error C1083: 無法開啟包含檔案: 'Snake.h': No such file or directory
+  GameState.cpp
+D:\GitHub Files\SnakeSimulator\ConsoleApplication1\ConsoleApplication1\SfSnake.h(2,9): fatal error C1083: 無法開啟包含檔案: 'Snake.h': No such file or directory
+  SfSnake.cpp
+D:\GitHub Files\SnakeSimulator\ConsoleApplication1\ConsoleApplication1\SfSnake.h(2,9): fatal error C1083: 無法開啟包含檔案: 'Snake.h': No such file or directory
+  Snake.cpp
+c1xx : fatal error C1083: 無法開啟來源檔案: 'Snake.cpp': No such file or directory
+  State.cpp
+D:\GitHub Files\SnakeSimulator\ConsoleApplication1\ConsoleApplication1\SfSnake.h(2,9): fatal error C1083: 無法開啟包含檔案: 'Snake.h': No such file or directory
+  main.cpp
+D:\GitHub Files\SnakeSimulator\ConsoleApplication1\ConsoleApplication1\SfSnake.h(2,9): fatal error C1083: 無法開啟包含檔案: 'Snake.h': No such file or directory
+  正在產生程式碼...
