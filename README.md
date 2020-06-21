@@ -1,6 +1,10 @@
 # SnakeSimulator
 Graphic simulator based on SFML interface. Dedicated for IM 1010 Final Project.
 
+## Content
+- A Visual Studio Project.
+- Map Generator (from [this repo](https://github.com/desk2000/IMshare))
+
 ## Preperation
 In order to use this tool, you need to:
 1. [Install Visual Studio.](https://visualstudio.microsoft.com/zh-hant/vs/)
@@ -18,6 +22,7 @@ In order to use this tool, you need to:
 ## Notice
 - Do not include `<Windows.h>` in any file, it causes conflict with SFML.
 - If you don't want to/can not use Visual Studio for this, you can still clone this repo, copy the files and figure it out yourself.
+- If you want to configure map or simply regenerating it, modify `\SnakeSimulator\ConsoleApplication1\ConsoleApplication1\map\maps\mapGenerator.cpp` and recompile, then execute it (check out [here](https://github.com/desk2000/IMshare)).
 - Report issue [here](https://github.com/desk2000/SnakeSimulator/issues) or contact us.
 
 ## Credits
