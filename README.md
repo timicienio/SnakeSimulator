@@ -1,4 +1,4 @@
-# SnakeSimulator (by fredred)
+# SnakeSimulator
 Graphic simulator based on SFML interface. Dedicated for IM 1010 Final Project.
 
 ## Preperation
