@@ -26,7 +26,12 @@ private:
 	void updateMapBody();
 	void render();
 	void loadmaps();
+	
 	std::vector<std::vector<int>> generate_map(std::vector<std::tuple<int, int>> snack) throw(out_of_range);
+	vector<vector<int>> generate_map2(std::vector<std::tuple<int, int>> snake) throw(out_of_range);
+	vector<int> findthree(int row, int col, queue<tuple<int, int>> snack);
+	vector<int> findfive(int row, int col, queue<tuple<int, int>> snack);
+	vector<int> findall(int row, int col, queue<tuple<int, int>> snack);
 	queue<tuple<int, int>> get_start_position();
 	vector<vector<int>> get_map();
 
