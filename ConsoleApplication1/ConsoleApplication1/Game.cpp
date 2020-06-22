@@ -65,8 +65,9 @@ void Game::run()
 	cout << "Start Simulation" << endl;
 	while (window->isOpen())
 	{
+		float TARGET_FRAMRATE = 20.f;
 		dt += clock.restart().asSeconds();
-		if (dt >= 0.f)
+		if (dt >= 1 / TARGET_FRAMRATE)
 		{
 			update();
 			render();
