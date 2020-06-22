@@ -1,7 +1,5 @@
 #pragma once
-
-#include"SfSnake.h"
-#include"GameState.h"
+#include "GameState.h"
 
 class Game
 {

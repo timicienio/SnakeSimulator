@@ -1,8 +1,6 @@
 #pragma once
-#include"Snake.h"
-#include"SFML\System.hpp"
-#include"SFML\Window.hpp"
-#include"SFML\Graphics.hpp"
+#include "Snake.h"
+#include "State.h"
 
 class SfSnake
 {

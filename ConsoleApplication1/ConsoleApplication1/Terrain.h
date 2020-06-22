@@ -1,5 +1,5 @@
 #pragma once
-#include"GameState.h"
+#include "State.h"
 class Terrain
 {
 	sf::RectangleShape body;

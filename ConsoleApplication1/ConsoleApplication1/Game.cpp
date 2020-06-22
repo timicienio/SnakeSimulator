@@ -3,6 +3,11 @@
 void Game::update()
 {
 	window->pollEvent(sfEvent);
+	switch (sfEvent.type)
+	{
+	default:
+		break;
+	}
 	if (!states.empty())
 	{
 		states.top()->update();
@@ -11,6 +16,10 @@ void Game::update()
 			delete states.top();
 			states.pop();
 			states.push(new GameState(&states, window));
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+		{
+			window->close();
 		}
 	}
 	else
@@ -34,9 +43,9 @@ void Game::render()
 }
 
 Game::Game()
-	:dt(0)
+	:dt(0.f)
 {
-	window = new sf::RenderWindow(sf::VideoMode(1024, 1024), "SnakeSimulator by fredred", sf::Style::Default);
+	window = new sf::RenderWindow(sf::VideoMode(1024, 1024), "SnakeSimulator by fredred", sf::Style::Titlebar);
 
 	states.push(new GameState(&states, window));
 }
@@ -48,15 +57,16 @@ Game::~Game()
 		delete states.top();
 		this->states.pop();
 	}
+	delete window;
 }
 
 void Game::run()
 {
+	cout << "Start Simulation" << endl;
 	while (window->isOpen())
 	{
 		dt += clock.restart().asSeconds();
-		float TARGET_FRAMERATE = 20.f;
-		if (dt >= 1 / TARGET_FRAMERATE)
+		if (dt >= 0.f)
 		{
 			update();
 			render();

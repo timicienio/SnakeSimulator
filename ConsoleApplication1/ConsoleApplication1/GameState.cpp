@@ -3,7 +3,7 @@
 GameState::GameState(std::stack<State*>* states, sf::RenderWindow* window)
 	:State(states, window), stepsLeft(8000), cur_map_index(1), score(0), gameOver(false), endMenu(nullptr)
 {
-	loadmaps(whole_map);
+	loadmaps();
 	sfsnake = new SfSnake(get_start_position());
 	map = generate_map(sfsnake->new_pos);
 	updateMapBody();
@@ -12,6 +12,8 @@ GameState::GameState(std::stack<State*>* states, sf::RenderWindow* window)
 	scoreText.setPosition(20.f, 900.f);
 	stepsText = sf::Text("Steps Left:" + to_string(stepsLeft), font, 64);
 	stepsText.setPosition(300.f, 900.f);
+	mapText = sf::Text("Map:" + to_string(cur_map_index), font, 64);
+	mapText.setPosition(780.f, 900.f);
 }
 
 GameState::~GameState()
@@ -39,9 +41,19 @@ void GameState::update()
 		{
 			score += map[get<0>(sfsnake->new_pos.back())][get<1>(sfsnake->new_pos.back())];
 			cur_map_index++;
-			map = generate_map(sfsnake->new_pos);
+			try
+			{
+				map = generate_map(sfsnake->new_pos);
+			}
+			catch (out_of_range & oor)
+			{
+				cout << oor.what() << endl;
+				endMenu = new EndMenu(&font, "Clear!");
+				gameOver = true;
+			}
 			updateMapBody();
 			scoreText.setString("Score:" + to_string(score));
+			mapText.setString("Map:" + to_string(cur_map_index));
 		}
 	}
 }
@@ -70,13 +82,14 @@ void GameState::render()
 	}
 	window->draw(scoreText);
 	window->draw(stepsText);
+	window->draw(mapText);
 	if (gameOver)
 	{
 		endMenu->draw(window);
 	}
 }
 
-void GameState::loadmaps(std::vector<std::vector<int>> map[NUM_MAP + 1])
+void GameState::loadmaps()
 {
 	fstream file;
 	char buffer[150];
@@ -105,15 +118,19 @@ void GameState::loadmaps(std::vector<std::vector<int>> map[NUM_MAP + 1])
 					tempv.push_back(temp);
 					row = strtok(NULL, d);
 				}
-				map[i].push_back(tempv);
+				whole_map[i].push_back(tempv);
 			} while (!file.eof());
 		}
 		file.close();
 	}
 }
 
-std::vector<std::vector<int>> GameState::generate_map(std::vector<std::tuple<int, int>> snake)
+std::vector<std::vector<int>> GameState::generate_map(std::vector<std::tuple<int, int>> snake) throw(out_of_range)
 {
+	if (cur_map_index > NUM_MAP)
+	{
+		throw out_of_range("No more maps");
+	}
 	queue<tuple<int, int>> snack;
 	for (int i = snake.size() - 1; i >= 0; i--)
 	{
